@@ -1,18 +1,39 @@
-<script>
-  // Get the current hour (0–23)
-  const hour = new Date().getHours();
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Auto-Switching Image</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <img id="autoImage" src="" alt="Time-based image">
+  <script>
+    // Get the current hour (0–23)
+    const hour = new Date().getHours();
 
-  // Grab the <img> element
-  const image = document.getElementById("autoImage");
+    // Grab the <img> element
+    const image = document.getElementById("autoImage");
 
-  // Choose which image to show
-  if (hour >= 6 && hour < 18) {
-    // Between 6:00am and 5:59pm – show light image
-    image.src = "images/Light-chart.png";
-  } else {
-    // Between 6:00pm and 5:59am – show dark image
-    image.src = "images/Dark-chart.png";
-  }
-</script>
+    // Choose which image to show
+    if (hour >= 6 && hour < 18) {
+      // Between 6:00am and 5:59pm – show light image
+      image.src = "images/Light-chart.png";
+    } else {
+      // Between 6:00pm and 5:59am – show dark image
+      image.src = "images/Dark-chart.png";
     }
   </script>
+</body>
+</html>
+
